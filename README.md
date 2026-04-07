@@ -142,3 +142,45 @@ helm version
 ---
 
 **[Module 1: เริ่มต้นกับ Helm](./module-1/tutorial.md)**
+
+
+# Helm Workshop
+
+This lab demonstrates the Helm lifecycle on a local Kubernetes cluster (k3d).
+
+## Tools Used
+- Docker Desktop
+- k3d
+- kubectl
+- Helm
+
+---
+
+## Steps Performed
+
+### 1. Create Helm Chart
+helm create myapp
+
+### 2. Install Release
+helm install myrelease ./myapp
+
+### 3. Upgrade Release
+helm upgrade myrelease ./myapp
+
+### 4. Rollback Release
+helm rollback myrelease 1
+
+### 5. Uninstall Release
+helm uninstall myrelease
+
+---
+
+## Verification Commands
+kubectl get pods
+helm list -A
+helm history myrelease
+
+---
+
+## Screenshots
+See /screenshots folder.
